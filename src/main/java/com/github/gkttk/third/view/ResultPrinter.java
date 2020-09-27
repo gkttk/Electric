@@ -1,6 +1,6 @@
 package com.github.gkttk.third.view;
 
-import com.github.gkttk.third.model.result.Result;
+import com.github.gkttk.third.model.Electricity;
 
 /**
  * This interface is responsible for result output
@@ -8,6 +8,6 @@ import com.github.gkttk.third.model.result.Result;
 
 public interface ResultPrinter {
 
-    void print(Result result);
+    void print(Electricity electricity);
 
 }

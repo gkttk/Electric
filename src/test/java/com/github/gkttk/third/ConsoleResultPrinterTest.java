@@ -1,6 +1,6 @@
 package com.github.gkttk.third;
 
-import com.github.gkttk.third.model.result.Result;
+import com.github.gkttk.third.model.Electricity;
 import com.github.gkttk.third.view.ConsoleResultPrinter;
 import com.github.gkttk.third.view.ResultPrinter;
 import org.junit.jupiter.api.AfterAll;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 public class ConsoleResultPrinterTest {
 
@@ -27,11 +26,13 @@ public class ConsoleResultPrinterTest {
     }
 
     @Test
-
     public void testPrint() {
+        //given
         String expectedString = "All devices: \nNumber of connected devices: 0\r\nConnected devices: \nTotal power consumption: 0.0\r\n";
-        Result testResult = new Result(new ArrayList<>(), 0, 0.0);
-        consoleResultPrinter.print(testResult);
+        Electricity electricity = new Electricity();
+        //when
+        consoleResultPrinter.print(electricity);
+        //then
         Assertions.assertEquals(expectedString, newOut.toString());
     }
 

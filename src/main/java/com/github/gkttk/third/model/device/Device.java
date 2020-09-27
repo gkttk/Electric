@@ -1,14 +1,17 @@
 package com.github.gkttk.third.model.device;
 
-public abstract class Device {
 
-    protected String name;
-    protected double powerConsumption;
-    protected boolean connected;
+public class Device {
 
-    public Device() {
-        this.connected = false;
+    private final String name;
+    private final double powerConsumption;
+
+
+    public Device(String name, double powerConsumption) {
+        this.name = name;
+        this.powerConsumption = powerConsumption;
     }
+
 
     public String getName() {
         return name;
@@ -18,15 +21,5 @@ public abstract class Device {
         return powerConsumption;
     }
 
-    public boolean isConnected() {
-        return connected;
-    }
 
-    public void plugIn(){
-        this.connected = true;
-    }
-
-    public void unplug(){
-        this.connected = false;
-    }
 }
